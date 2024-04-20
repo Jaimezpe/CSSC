@@ -61,6 +61,16 @@
                 src: url('SSFDR.ttf') format('truetype');
             }
 
+            .botonpcompleta {
+                  background-color: black; /* Color de fondo negro */
+                  border: none; /* Sin borde */
+                  padding: 10px 20px; /* Espaciado interno */
+                  font-size: 16px; /* Tamaño de fuente */
+                  cursor: pointer; /* Cursor de puntero al pasar sobre el botón */
+                  border-radius: 5px; /* Bordes redondeados */
+                }
+
+
         </style>
         <script>// Función para actualizar el reloj y la fecha
         function updateTimeAndDate() {
@@ -88,6 +98,56 @@
         
         // Llama a la función por primera vez para evitar un retraso en la actualización
         updateTimeAndDate();
+
+
+
+            function launchFullScreen(element) {
+          if (element.requestFullscreen) {
+            element.requestFullscreen();
+        function launchFullScreen(element) {
+          if (element.requestFullscreen) {
+            element.requestFullscreen();
+          } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+          } else if (element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen();
+          } else {
+            console.log("La función fullscreen no es compatible con este navegador.");
+          }
+        }
+
+function cancelFullScreen(element) {
+  if (element.exitFullscreen) {
+    element.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else {
+    console.log("La función de salida de fullscreen no es compatible con este navegador.");
+  }
+}} else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else {
+    console.log("La función fullscreen no es compatible con este navegador.");
+  }
+}
+
+function cancelFullScreen(element) {
+  if (element.exitFullscreen) {
+    element.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else {
+    console.log("La función de salida de fullscreen no es compatible con este navegador.");
+  }
+}
+
+            
         </script>
     </head>
     <body>
@@ -101,6 +161,7 @@
             <div id="date" class="dia"></div>
         </div>
         
+        <button onclick="launchFullScreen(document.documentElement);" class="botonpcompleta"></button>
     </body>
     
 </html>
