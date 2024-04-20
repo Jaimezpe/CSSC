@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ScreenSaverClock</title>
+        <style>
+            body {
+                background-color: black;
+                color: white;
+                font-family: Arial, sans-serif;
+                display: flex; /* Utilizamos flexbox */
+                justify-content: center; /* Centramos horizontalmente */
+                align-items: center; /* Centramos verticalmente */
+                font-family: 'Times New Roman', Times, serif;
+            }
+            .body1 {
+                background-color: black;
+                color: white;
+                font-family: Arial, sans-serif;
+                display: flex; /* Utilizamos flexbox */
+                justify-content: center; /* Centramos horizontalmente */
+                align-items: center; /* Centramos verticalmente */
+                
+                font-family: 'Times New Roman', Times, serif;
+            }
+            .bodyiconos {
+                background-color: black;
+                color: white;
+                font-family: Arial, sans-serif;
+                display: flex; /* Utilizamos flexbox */
+                justify-content: center; /* Centramos horizontalmente */
+                align-items: center; /* Centramos verticalmente */
+                
+                font-family: 'Times New Roman', Times, serif;
+            }
+            .reloj {
+                font-size: 250px;
+            }
+            .separador {
+                font-size: 250px;
+            }
+            
+            .calendar { background-color: #000000; }
+            
+            .reloj {
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 150px;
+                text-align: center;
+                margin-top: 50px;
+                color: white;
+            }
+        </style>
+        <script>
+           function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+
+            // Formateo para mostrar siempre dos dígitos
+            if (hours < 10) hours = "0" + hours;
+            if (minutes < 10) minutes = "0" + minutes;
+
+            var timeString = hours + ":" + minutes;
+
+            document.getElementById("time").innerText = timeString;
+        }
+
+        setInterval(updateClock, 1);
+
+        document.documentElement.requestFullscreen();
+
+
+
+        
+
+        </script>
+    </head>
+    <body>
+        
+        <div class="body1">
+            <div class="reloj">
+                <div id="time"></div>
+            </div>
+            <p class="separador">‎ |</p> 
+            <img src="Soleado.png" alt="Soleado">
+        </div>
+        
+    </body>
+    
+</html>
