@@ -50,29 +50,32 @@
                 color: white;
             }
         </style>
-        <script>
-           function updateClock() {
+        <script>// Función para actualizar el reloj y la fecha
+        function updateTimeAndDate() {
             var now = new Date();
             var hours = now.getHours();
             var minutes = now.getMinutes();
+            var dayOfMonth = now.getDate();
+            var dayOfWeek = now.toLocaleString('en', { weekday: 'short' });
 
-            // Formateo para mostrar siempre dos dígitos
+            // Formateo para mostrar siempre dos dígitos en la hora y el día del mes
             if (hours < 10) hours = "0" + hours;
             if (minutes < 10) minutes = "0" + minutes;
+            if (dayOfMonth < 10) dayOfMonth = "0" + dayOfMonth;
 
             var timeString = hours + ":" + minutes;
+            var dateString = dayOfMonth + " " + dayOfWeek;
 
+            // Actualiza el contenido de los elementos HTML
             document.getElementById("time").innerText = timeString;
+            document.getElementById("date").innerText = dateString;
         }
 
-        setInterval(updateClock, 1);
-
-        document.documentElement.requestFullscreen();
-
-
-
+        // Actualiza el reloj y la fecha cada segundo
+        setInterval(updateTimeAndDate, 1000);
         
-
+        // Llama a la función por primera vez para evitar un retraso en la actualización
+        updateTimeAndDate();
         </script>
     </head>
     <body>
